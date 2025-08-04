@@ -1,0 +1,136 @@
+<!-- Projects Hero Section -->
+<section class="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-bold text-white mb-6">My Projects</h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        A collection of my best work, showcasing my skills in web development, design, and problem-solving
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% @projects.each do |project| %>
+        <div class="group bg-black/50 border border-yellow-500/20 rounded-xl overflow-hidden hover:border-yellow-400/40 transition-all duration-300 transform hover:scale-105">
+          <!-- Project Image -->
+          <div class="relative overflow-hidden">
+            <% if project.image.attached? %>
+              <img src="<%= url_for(project.image) %>" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+            <% else %>
+              <div class="w-full h-48 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 flex items-center justify-center">
+                <i class="fas fa-image text-4xl text-yellow-400/50"></i>
+              </div>
+            <% end %>
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+          </div>
+          
+          <!-- Project Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+              <%= project.title %>
+            </h3>
+            <p class="text-gray-400 mb-4 line-clamp-3">
+              <%= project.description %>
+            </p>
+            
+            <!-- Project Actions -->
+            <div class="flex items-center justify-between">
+              <a href="<%= project.link %>" target="_blank" class="inline-flex items-center px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-external-link-alt mr-2"></i>
+                View Project
+              </a>
+              <div class="flex space-x-2">
+                <span class="px-3 py-1 bg-yellow-400/10 text-yellow-400 text-xs rounded-full border border-yellow-400/20">
+                  Web App
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <!-- Empty State -->
+    <% if @projects.empty? %>
+      <div class="text-center py-20">
+        <div class="w-24 h-24 bg-yellow-400/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-folder-open text-3xl text-yellow-400"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-4">No Projects Yet</h3>
+        <p class="text-gray-400 max-w-md mx-auto">
+          I'm currently working on some amazing projects. Check back soon to see my latest work!
+        </p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<!-- Featured Project Section -->
+<% if @featured_projects.any? %>
+  <section class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Featured Projects</h2>
+        <p class="text-xl text-gray-400">My latest and greatest work</p>
+      </div>
+      
+      <% @featured_projects.each do |featured_project| %>
+        <div class="bg-gray-900/50 border border-yellow-500/20 rounded-2xl overflow-hidden mb-12">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Project Image -->
+            <div class="relative overflow-hidden">
+              <div class="w-full h-64 lg:h-full bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 flex items-center justify-center">
+                <i class="fas fa-star text-6xl text-yellow-400/50"></i>
+              </div>
+              <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+            
+            <!-- Project Details -->
+            <div class="p-8 lg:p-12">
+              <div class="mb-6">
+                <h3 class="text-3xl font-bold text-white mb-4"><%= featured_project.title %></h3>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                  <%= featured_project.description %>
+                </p>
+              </div>
+              
+              <!-- Tech Stack -->
+              <% if featured_project.technologies_list.any? %>
+                <div class="mb-8">
+                  <h4 class="text-lg font-semibold text-yellow-400 mb-4">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <% featured_project.technologies_list.each do |tech| %>
+                      <span class="px-3 py-1 bg-yellow-400/10 text-yellow-400 text-sm rounded-full border border-yellow-400/20">
+                        <%= tech %>
+                      </span>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+              
+              <!-- Project Links -->
+              <div class="flex flex-col sm:flex-row gap-4">
+                <% if featured_project.has_live_demo? %>
+                  <a href="<%= featured_project.live_url %>" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    Live Demo
+                  </a>
+                <% end %>
+                <% if featured_project.has_github? %>
+                  <a href="<%= featured_project.github_url %>" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300">
+                    <i class="fab fa-github mr-2"></i>
+                    View Code
+                  </a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+<% end %>

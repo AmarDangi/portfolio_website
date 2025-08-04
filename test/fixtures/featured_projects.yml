@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  technologies: MyText
+  live_url: MyString
+  github_url: MyString
+  featured: false
+  order: 1
+
+two:
+  title: MyString
+  description: MyText
+  technologies: MyText
+  live_url: MyString
+  github_url: MyString
+  featured: false
+  order: 1

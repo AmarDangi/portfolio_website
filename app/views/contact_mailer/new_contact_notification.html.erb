@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>New Contact Message</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: #fbbf24; color: #000; padding: 20px; text-align: center; }
+    .content { padding: 20px; background: #f9f9f9; }
+    .contact-info { background: #fff; padding: 15px; margin: 15px 0; border-left: 4px solid #fbbf24; }
+    .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+    .button { display: inline-block; padding: 10px 20px; background: #fbbf24; color: #000; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>New Contact Message</h1>
+      <p>You have received a new message from your portfolio website</p>
+    </div>
+    
+    <div class="content">
+      <div class="contact-info">
+        <h3>Contact Details:</h3>
+        <p><strong>Name:</strong> <%= @contact.name %></p>
+        <p><strong>Email:</strong> <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a></p>
+        <p><strong>Date:</strong> <%= @contact.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+      </div>
+      
+      <div class="contact-info">
+        <h3>Message:</h3>
+        <p><%= simple_format(@contact.message) %></p>
+      </div>
+      
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="mailto:<%= @contact.email %>?subject=Re: Your message from <%= @contact.name %>" class="button">
+          Reply to <%= @contact.name %>
+        </a>
+      </div>
+      
+      <div style="text-align: center; margin: 20px 0;">
+        <a href="<%= admin_contact_url(@contact) %>" class="button">
+          View in Admin Panel
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>This email was sent from your portfolio contact form.</p>
+      <p>© 2024 Portfolio. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html> 

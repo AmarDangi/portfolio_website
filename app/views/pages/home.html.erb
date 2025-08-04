@@ -1,0 +1,102 @@
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+  
+  <!-- Animated background elements -->
+  <div class="absolute inset-0">
+    <div class="absolute top-20 left-20 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  </div>
+  
+  <!-- Main content -->
+  <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="mb-8">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        <span class="text-white">Hello, I'm</span>
+        <span class="text-yellow-400 block">Amar Dangi</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+        Ruby On Rails & Full-Stack Developer crafting digital experiences that matter
+      </p>
+    </div>
+    
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+      <a href="<%= projects_path %>" class="group relative px-8 py-4 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
+        <span class="relative z-10">View My Work</span>
+        <div class="absolute inset-0 bg-yellow-300 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+      </a>
+      <a href="<%= contact_path %>" class="px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+        Get In Touch
+      </a>
+    </div>
+    
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-400 mb-2">5+</div>
+        <div class="text-gray-400">Projects Completed</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-400 mb-2">3+</div>
+        <div class="text-gray-400">Years Experience</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-400 mb-2">100%</div>
+        <div class="text-gray-400">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-yellow-400 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-yellow-400 rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Skills Section -->
+<section class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-white mb-4">What I Do</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        I specialize in creating modern web applications with cutting-edge technologies
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-black/50 border border-yellow-500/20 rounded-xl p-8 hover:border-yellow-400/40 transition-all duration-300 transform hover:scale-105">
+        <div class="text-yellow-400 text-4xl mb-4">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">Web Development</h3>
+        <p class="text-gray-400">
+          Building responsive, scalable web applications using modern frameworks and best practices.
+        </p>
+      </div>
+      
+      <div class="bg-black/50 border border-yellow-500/20 rounded-xl p-8 hover:border-yellow-400/40 transition-all duration-300 transform hover:scale-105">
+        <div class="text-yellow-400 text-4xl mb-4">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">UI/UX Design</h3>
+        <p class="text-gray-400">
+          Creating intuitive and beautiful user interfaces that enhance user experience.
+        </p>
+      </div>
+      
+      <div class="bg-black/50 border border-yellow-500/20 rounded-xl p-8 hover:border-yellow-400/40 transition-all duration-300 transform hover:scale-105">
+        <div class="text-yellow-400 text-4xl mb-4">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">Mobile Development</h3>
+        <p class="text-gray-400">
+          Developing cross-platform mobile applications with native performance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
