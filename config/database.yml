@@ -90,8 +90,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-# production:
-#   primary: &primary_production
+production:
+ url: postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio
 #     <<: *default
 #     database: portfolio_website_production
 #     username: portfolio_website
