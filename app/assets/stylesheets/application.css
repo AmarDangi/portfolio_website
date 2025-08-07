@@ -163,7 +163,7 @@
 }
 
 /* Responsive Typography */
-@media (max-width: 640px) {
+@media (max-width: 40px) {
   .text-responsive {
     font-size: clamp(1.5rem, 4vw, 3rem);
   }
