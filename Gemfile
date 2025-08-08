@@ -64,7 +64,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-gem 'sass-rails'
+# gem 'sass-rails'
 gem 'webpacker'
 # gem 'turbo-rails'
 # gem 'stimulus-rails'
@@ -73,4 +73,5 @@ gem 'devise'
 gem 'tailwindcss-rails'
 # gem 'image_processing'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem "sprockets-rails"
 
