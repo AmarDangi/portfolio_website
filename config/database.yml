@@ -91,20 +91,19 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
- url: postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio
-#     <<: *default
-#     database: portfolio_website_production
-#     username: portfolio_website
-#     password: <%= ENV["PORTFOLIO_WEBSITE_DATABASE_PASSWORD"] %>
-#   cache:
-#     <<: *primary_production
-#     database: portfolio_website_production_cache
-#     migrations_paths: db/cache_migrate
-#   queue:
-#     <<: *primary_production
-#     database: portfolio_website_production_queue
-#     migrations_paths: db/queue_migrate
-#   cable:
-#     <<: *primary_production
-#     database: portfolio_website_production_cable
-#     migrations_paths: db/cable_migrate
+  url: postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio
+
+  cache:
+    <<: *default
+    url: postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio_cache
+    migrations_paths: db/cache_migrate
+
+  queue:
+    <<: *default
+    url: postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio_queue
+    migrations_paths: db/queue_migrate
+
+  cable:
+    <<: *default
+    url: postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio_cable
+    migrations_paths: db/cable_migrate
