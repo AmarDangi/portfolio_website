@@ -65,7 +65,7 @@ group :test do
   gem "selenium-webdriver"
 end
 gem 'sass-rails'
-gem 'webpacker'
+# gem 'webpacker'
 # gem 'turbo-rails'
 # gem 'stimulus-rails'
 gem 'activeadmin'
