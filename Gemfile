@@ -75,6 +75,6 @@ gem 'devise'
 # gem 'image_processing'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem "sprockets-rails"
-gem "tailwindcss-rails", "~> 3.3.1"
+gem "tailwindcss-rails", "~> 4.3.0"
 
 
