@@ -5,4 +5,5 @@
 //= link application.css
 //= link tailwind.css
 //= link inter-font.css
+//= link application.js 
 
