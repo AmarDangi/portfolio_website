@@ -31,3 +31,7 @@ production:
 cable:
   <<: *default
   url: <%= ENV["DATABASE_URL"] || "postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio" %>
+
+queue:
+  <<: *default
+   url: <%= ENV["DATABASE_URL"] || "postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio" %>
