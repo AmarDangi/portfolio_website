@@ -1,5 +1,4 @@
 # PostgreSQL. Versions 9.3 and up are supported.
-#
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -27,11 +26,12 @@ production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] || "postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio" %>
 
-  # Cable DB config — uses the same connection as production
 cable:
   <<: *default
   url: <%= ENV["DATABASE_URL"] || "postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio" %>
 
+
 queue:
   <<: *default
-   url: <%= ENV["DATABASE_URL"] || "postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio" %>
+  url: <%= ENV["DATABASE_URL"] || "postgresql://portfloio_user:b2nESufraHPE0DvJF7puW7fakXd86yUw@dpg-d2a5kn95pdvs73adfsag-a/portfloio" %>
+  
