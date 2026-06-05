@@ -79,3 +79,5 @@ gem "sprockets-rails"
 gem "tailwindcss-rails", "~> 3.3.1"
 
 
+
+gem "cloudinary", "~> 2.4"
